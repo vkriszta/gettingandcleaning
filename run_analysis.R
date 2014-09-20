@@ -40,7 +40,6 @@ groupeddata<-group_by(dataextract, subject, activity)
 
 library(plyr)
 tidydata<-ddply(groupeddata,.(subject,activity), numcolwise(mean))
-tidydata
 
-
+write.table(tidydata, file="tidydata.txt",row.name=FALSE)
 
