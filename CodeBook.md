@@ -3,15 +3,19 @@ Data and variables
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Xtrain		stores data from X_train.txt (data.frame, 7352 x 561)
+
 Xtest   	stores data from X_test.txt (data.frame, 2947 x 561)
 
 subjecttrain  	stores data from subject_train.txt (data.frame, 7352 x 1)
+
 subjecttest   	stores data from subject_test.txt (data.frame, 2947 x 1)
 
 Ytrain		stores data from Y_train.txt (data.frame, 7532 x 1)
+
 Ytest   	stores data from Y_test.txt (data.frame, 2947 x 1)
 
 train  		stores data bounded by columns of Xtrain, subjecttrain, Ytrain (data.frame, 7352 x 563)
+
 test		stores data bounded by columns of Xest, subjecttest, Ytest (data.frame, 2947 x 563)
 
 alldata		stores data bounded by rows of train and test (data.frame, 10299 x 563)
@@ -19,7 +23,9 @@ alldata		stores data bounded by rows of train and test (data.frame, 10299 x 563)
 features	stores data from features.txt (data.frame561 x 2)
 
 featuresmean	stores the index of features which contain "mean()" (int [1:33])
+
 featuresstd	stores the index of features which contain "std()" (int [1:33])
+
 featuresfilter	stores the index of features which contain "mean()" or "std" (int [1:66])
 
 dataextract 	data.frame extracted from alldata according to steps 2,3,4 of Course project description
