@@ -7,12 +7,13 @@ subjecttest<-read.table('./UCI HAR Dataset/test/subject_test.txt', header=FALSE,
 Ytrain<-read.table('./UCI HAR Dataset/train/Y_train.txt', header=FALSE, sep="",stringsAsFactors=FALSE, fill=TRUE)
 Ytest<-read.table('./UCI HAR Dataset/test/Y_test.txt', header=FALSE, sep="",stringsAsFactors=FALSE, fill=TRUE)
 
+features<-read.table('./UCI HAR Dataset/features.txt', header=FALSE, sep="",stringsAsFactors=FALSE, fill=TRUE)
+
 train<-cbind(Xtrain,subjecttrain,Ytrain)
 test<-cbind(Xtest,subjecttest,Ytest)
 
 alldata<-rbind(train,test)
 
-features<-read.table('./UCI HAR Dataset/features.txt', header=FALSE, sep="",stringsAsFactors=FALSE, fill=TRUE)
 
 names(alldata)<-c(features[,2],"subject","activity")
 
@@ -39,5 +40,7 @@ groupeddata<-group_by(dataextract, subject, activity)
 
 library(plyr)
 tidydata<-ddply(groupeddata,.(subject,activity), numcolwise(mean))
+tidydata
+
 
 
